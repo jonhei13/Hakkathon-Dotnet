@@ -29,8 +29,12 @@
         <!-- Button -->
         @foreach (var item in Model.Items)
         {
-            <p class="card-text">@item.Title</p>
+            <p class="card-text">Bloodpressure  @item.BloodPressure</p>
+            <p class="card-text">Allergies
+        
+            @item.Allergies</p>
 
+            <p class="card-text">Budget: @item.Budget</p>
         }
 
     </div>

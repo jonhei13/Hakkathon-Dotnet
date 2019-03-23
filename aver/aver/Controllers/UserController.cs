@@ -20,13 +20,14 @@ namespace aver.Controllers
         public List<UserItem> GetItems()
         {
             List<UserItem> items = new List<UserItem>();
+            List<string> allergies = new List<string>();
 
-            items.Add(new UserItem { Date = DateTime.Now, Title ="Flottur titill"});
-            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill" });
-            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill" });
-            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill" });
+            allergies.Add("ofnæmi1");
+            allergies.Add("ofnæmi2");
+            allergies.Add("ofnæmi3");
 
-            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill" });
+            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill", Allergies=allergies, Budget = 22222, BloodPressure = "AOK"});
+            
             return items;
         }
     }
