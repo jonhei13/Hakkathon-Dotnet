@@ -1,5 +1,6 @@
 
-﻿using aver.services;
+using aver.Models;
+using aver.services;
 
 
 
@@ -12,13 +13,19 @@ using System.Web.Mvc;
 namespace aver.Controllers
 {
     public class HomeController : Controller
-    {
+    { 
+
+         public BusinessHelper helper = new BusinessHelper();
+
         public ActionResult Index()
         {
+
 
             return View();
         }
 
+
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

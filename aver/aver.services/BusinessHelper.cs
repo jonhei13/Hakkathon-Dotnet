@@ -19,6 +19,18 @@ namespace aver.services
         }
 
 
+        public List<string> GetDiagnosisIds(string ssn)
+        {
+            var data = origoAPI.GetPationtData(ssn);
+
+            List<string> ids = new List<string>();
+            data.ReturnData.DiagnosisData.ForEach((item) =>
+            {
+                ids.Add(item.IcD10Code);
+            });
+            return ids;
+        }
+
         public List<NotificationItem> GetMedicationHistoryList(string ssn)
         {
             var data = origoAPI.GetPationtData(ssn);
