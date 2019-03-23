@@ -14,7 +14,7 @@ namespace aver.Controllers
         public ActionResult Index()
         {
             var x = new ArionApi();
-            x.GetHospitalCosts(DateTime.Now.AddDays(-1), DateTime.Now);
+            x.GetFinancialStatus();
             return View();
         }
 
