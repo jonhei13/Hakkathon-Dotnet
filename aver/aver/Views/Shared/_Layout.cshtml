@@ -33,12 +33,19 @@
         @RenderBody()
         <hr />
         <footer>
-            <div class="navbar-btn">
-                <a class="btn" href="">Heim</a>
-                <a class="btn" href="">Tilkynningar</a>
-                <a class="btn" href="">Bóka</a>
-                <a class="btn" href="">Stillingar</a>
-            </div>
+            <div class="navbar navbar-inverse navbar-fixed-bottom ">
+                <div class=" container-fluid">    
+                    <div style="display: inline-block;">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Tilkynningar", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Bóka", "Index", "Notifications")</li>
+                            <li>@Html.ActionLink("History", "Index", "History")</li>
+                        </ul>
+                    </div>
+                </div>
+             </div>
+
         </footer>
     </div>
 
