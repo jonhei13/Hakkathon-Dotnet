@@ -39,6 +39,29 @@ namespace aver.services.ArionApi
             return claims;
         }
 
+        public int GetHospitalCosts(DateTime? From, DateTime? To)
+        {
+            var x = string.Format("https://arionapi-sandbox.azure-api.net/claims/v1/claims?page={0}&perPage={1}&claimantKennitala={2}&dateFrom={3}&dateTo{4}", "1", "1500", "1504442099", , From.HasValue ? To.Value.ToString() : "");
+            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/claims/v1/claims?page={0}&perPage={1}&claimantKennitala={2}&dateFrom={3}&dateTo{4}", "1", "1500", "1504442099", To.HasValue ? To.Value.ToString() : "", From.HasValue ? From.Value.ToString() : "")).Result;
+            var claims = new ClaimsModel();
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                claims = JsonConvert.DeserializeObject<ClaimsModel>(responseContent);
+                if(claims == null)
+                {
+                    return 0;
+                }
+                int sum = 0;
+                foreach(var claim in claims.claim)
+                {
+                    sum += Convert.ToInt32(claim.amount);
+                }
+                return sum;
+            }
+            return 0;
+        }
+
         public AccountModel GetAccountStatus()
         {
             HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/accounts/v1/accounts")).Result;

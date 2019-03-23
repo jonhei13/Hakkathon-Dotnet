@@ -12,10 +12,7 @@ namespace aver.Controllers
         public ActionResult Index()
         {
             var x = new ArionApi();
-            //var bla = x.GetClaims(1, 50);
-            //var account = x.GetAccountStatus();
-            //var bla = x.GetBankInfo();
-            //var da = x.GetCreditCardInfo();
+            x.GetHospitalCosts(DateTime.Now.AddDays(-1), DateTime.Now);
             return View();
         }
 
