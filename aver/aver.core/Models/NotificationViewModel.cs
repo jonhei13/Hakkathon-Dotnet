@@ -12,8 +12,11 @@ namespace aver.Models
 
     public class NotificationItem
     {
-        public string Title { get; set; }
         public DateTime Date { get; set; }
-        public string Desctiption { get; set; }
-    }
+        public string Title { get; set; }
+        public string Quantity { get; set; }
+        public string Strength { get; set; }
+        public string Uses { get; set; }
+        public string Instructions { get; set; }
+    } 
 }

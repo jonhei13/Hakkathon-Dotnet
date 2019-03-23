@@ -1,4 +1,5 @@
 ﻿using aver.Models;
+using aver.services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace aver.Controllers
 {
     public class NotificationsController : Controller
     {
+
+        public BusinessHelper helper = new BusinessHelper();
+
+
         // GET: Notifications
         public ActionResult Index()
         {
@@ -20,16 +25,8 @@ namespace aver.Controllers
 
         public List<NotificationItem> GetItems()
         {
-            List<NotificationItem> items = new List<NotificationItem>();
+            var items =  helper.GetMedicationHistoryList("0206929999");
 
-            items.Add(new NotificationItem { Date =  DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu"});
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
-            items.Add(new NotificationItem { Date = DateTime.Now, Title = "Uppfærði skýrslu", Desctiption = "Bætti við lýsingu og viðhengi á skýrslu" });
             return items;
         }
 

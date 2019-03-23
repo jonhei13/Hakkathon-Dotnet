@@ -70,7 +70,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BookingItem.cs" />
+    <Compile Include="Models\HistoryItem.cs" />
+    <Compile Include="Models\HistoryViewModel.cs" />
+    <Compile Include="Models\HomeScreenViewModel.cs" />
+    <Compile Include="Models\NotificationViewModel.cs" />
     <Compile Include="Models\OrigoTreatmentModel.cs" />
+    <Compile Include="Models\StatisticsItem.cs" />
+    <Compile Include="Models\StatisticsViewModel.cs" />
+    <Compile Include="Models\SuggestionItem.cs" />
+    <Compile Include="Models\SuggestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
