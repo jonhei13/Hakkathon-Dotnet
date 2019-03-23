@@ -4,6 +4,7 @@ using aver.core.Model.Arion.Claims;
 using aver.core.Model.Arion.Claims.ClaimsModel;
 using aver.core.Model.Arion.Claims.Transaction;
 using aver.core.Model.Arion.CreditCards;
+using aver.core.Model.Arion.FinancialData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,28 @@ namespace aver.services.ArionApi
             return claims;
         }
 
+        public int GetTotalClaims(DateTime? From, DateTime? To, string ssn)
+        {
+            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/claims/v1/claims?page={0}&perPage={1}&claimantKennitala={2}&dateFrom={3}&dateTo{4}", "1", "1500", ssn, To.HasValue ? To.Value.ToString() : "", From.HasValue ? From.Value.ToString() : "")).Result;
+            var claims = new ClaimsModel();
+            if (response.IsSuccessStatusCode)
+            {
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                claims = JsonConvert.DeserializeObject<ClaimsModel>(responseContent);
+                if(claims == null)
+                {
+                    return 0;
+                }
+                int sum = 0;
+                foreach(var claim in claims.claim)
+                {
+                    sum += Convert.ToInt32(claim.amount);
+                }
+                return sum;
+            }
+            return 0;
+        }
+
         public AccountModel GetAccountStatus()
         {
             HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/accounts/v1/accounts")).Result;
@@ -51,16 +74,74 @@ namespace aver.services.ArionApi
             return account;
         }
 
+        public FinancialModel GetFinancialStatus()
+        {
+            var accounts = GetAccountStatus().account.Where(x => x.status == "open");
+
+            if(accounts == null)
+            {
+                return null;
+            }
+            int totalSalaryFor6Months = 0;
+            int claims = 0;
+            var currentYear = DateTime.Now.Year;
+            var currentMonth = DateTime.Now.Month;
+            var lastMonth = DateTime.Now.AddMonths(-1).Month;
+            if (DateTime.Now.Day > 15)
+            {
+                lastMonth = DateTime.Now.Month;
+            }
+            foreach (var acc in accounts)
+            {
+                var salary = GetAccountTransaction(acc.accountID, "1", "1500", DateTime.Now, DateTime.Now.AddMonths(-6));
+                int currentSalary = 0;
+                if (salary.transaction != null)
+                {
+                    var temp = salary.transaction.Where(x => x.category == "Laun");
+                    foreach(var tempsal in temp)
+                    {
+                        currentSalary += Convert.ToInt32(tempsal.amount);
+                    }
+                }
+                totalSalaryFor6Months += Convert.ToInt32(currentSalary * -1);
+                claims += Convert.ToInt32(GetTotalClaims(new DateTime(currentYear, currentMonth, 1), new DateTime(currentMonth, lastMonth, 15), acc.accountID));
+            }
+
+            var model = new FinancialModel();
+            totalSalaryFor6Months = (totalSalaryFor6Months / 6) * 5000;
+            model.TotalAmount = totalSalaryFor6Months;
+
+
+            model.AmountAfterBills = totalSalaryFor6Months - claims;
+            if(model.AmountAfterBills < 100000)
+            {
+                model.AllegedFoodCost = 30000;
+            }
+            if(model.AmountAfterBills > 100000 && model.AmountAfterBills < 200000)
+            {
+                model.AllegedFoodCost = 50000;
+            }
+            if(model.AmountAfterBills > 200000 && model.AmountAfterBills < 400000)
+            {
+                model.AllegedFoodCost = 800000;
+            }
+            else
+            {
+                model.AllegedFoodCost = 800000;
+            }
+            return model;
+        }
+
         public AccountTransactions GetAccountTransaction(string accountNumber, string page, string perPage, DateTime? dateFrom, DateTime? dateTo)
         {
 
             var queryString = HttpUtility.ParseQueryString(string.Empty);
-            queryString["page"] = page == null ? "" : page;
-            queryString["perPage"] = perPage == null ? "" : perPage;
-            queryString["dateFrom"] = dateFrom == null ? "" : dateFrom.Value.ToString();
-            queryString["dateTo"] = dateTo == null ? "" : dateTo.Value.ToString();
+            page = page == null ? "" : page;
+            perPage = perPage == null ? "" : perPage;
+            string from = dateFrom == null ? "" : dateFrom.Value.ToString("yyyy-MM-dd");
+            string to = dateTo == null ? "" : dateTo.Value.ToString("yyyy-MM-dd");
 
-            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/accounts/v1/accounts/{0}/accountTransactions?{1}", accountNumber, queryString)).Result;
+            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/accounts/v1/accounts/{0}/accountTransactions?page={1}&perPage={2}&dateFrom={3}&dateTo={4}", accountNumber, page, perPage, "2016-01-01", "2017-01-01")).Result;
             var account = new AccountTransactions();
             if (response.IsSuccessStatusCode)
             {

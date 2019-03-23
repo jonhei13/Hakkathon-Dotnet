@@ -1,9 +1,8 @@
 
+
+using aver.services.ArionApi;
 using aver.Models;
 using aver.services;
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +18,6 @@ namespace aver.Controllers
 
         public ActionResult Index()
         {
-
-
             return View();
         }
 
