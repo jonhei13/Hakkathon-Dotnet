@@ -6,14 +6,15 @@
 
 
 
-
-
 <!-- Card -->
 <div class="card" style="margin-top: 10px;" >
-
     <!-- Card image -->
     <div class="view overlay">
-        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkwPeS3Q8gSIrdgYuhWQuH97V1kkVHcbzX5JNJ9urgJ-Mo043" alt="Card image cap">
+        <div class="card-img-top card-image-main img-profile img-bigger-height">
+        </div>
+
+
+        @*<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkwPeS3Q8gSIrdgYuhWQuH97V1kkVHcbzX5JNJ9urgJ-Mo043" alt="Card image cap">*@
         <a href="#!">
             <div class="mask rgba-white-slight"></div>
         </a>
@@ -21,11 +22,10 @@
 
     <!-- Card content -->
     <div class="card-body">
-
         <!-- Title -->
         <h4 class="card-title" style="">About you</h4>
         <!-- Text -->
-        <p class="card-text" style="merge-bottom: 5px;">This is what we know about you</p>
+        <p class="card-text" style="margin-bottom: 5px;">This is what we know about you</p>
         <!-- Button -->
         @foreach (var item in Model.Items)
         {
@@ -54,9 +54,7 @@
 
             <p class="card-text" style="font-weight: bold;">Budget: @item.Budget</p>
         }
-
     </div>
-
 </div>
 <!-- Card -->
 
