@@ -1,5 +1,4 @@
-﻿
-
+﻿using aver.core.Models;
 using aver.Models;
 using System;
 using System.Collections.Generic;
@@ -13,11 +12,19 @@ namespace aver.services
         {
             origoAPI = new OrigoAPI();
         }
-        public HistoryItem GetPatientHistory(string SSN)
+        public IEnumerable<OrigoAllergyData> GetAllergyDatas(string SSN)
         {
-            return null;
+            var data = origoAPI.GetPationtData(SSN).ReturnData;
+
+            return data.AllergyData;
         }
 
+        public IEnumerable<OrigoMeasurementsData> GetBloodWorks(string SSN)
+        {
+            var data = origoAPI.GetPationtData(SSN).ReturnData;
+
+            return data.MeasurementsData;
+        }
 
         public List<NotificationItem> GetMedicationHistoryList(string ssn)
         {
