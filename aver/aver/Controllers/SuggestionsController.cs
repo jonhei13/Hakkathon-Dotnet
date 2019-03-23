@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aver.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,20 @@ namespace aver.Controllers
         // GET: Suggestions
         public ActionResult Index()
         {
-            return View();
+            SuggestionViewModel model = new SuggestionViewModel();
+            model.Items = GetItems();
+            return View(model);
+        }
+
+        public List<SuggestionItem> GetItems()
+        {
+            List<SuggestionItem> items = new List<SuggestionItem>();
+
+            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message ="Ristilskoðun"});
+            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message = "Ristilspeglun" });
+            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message = "Legsokoðun" });
+           
+            return items;
         }
     }
 }

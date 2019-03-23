@@ -1,0 +1,15 @@
+﻿@model aver.Models.SuggestionViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@foreach (var item in Model.Items)
+{
+    <h2>@item.Message</h2>
+    <p>Last checkup @item.DateSinceLast</p>
+
+}

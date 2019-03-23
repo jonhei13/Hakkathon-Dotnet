@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aver.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,15 @@ namespace aver.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult BookingFor(int ssn)
+        {
+            BookingItem model = new BookingItem();
+            model.Ssn = ssn.ToString();
+            model.NextAvailible = DateTime.Now;
+            model.Name = "Ari Freyr Guðmundsson";
+            return View(model);
         }
     }
 }
