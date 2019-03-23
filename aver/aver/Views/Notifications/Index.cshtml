@@ -1,8 +1,14 @@
-﻿@model aver.Models.NotificationViewModel
+﻿@*@model aver.Models.NotificationViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tilkynningar";
 }
+
+<h2>Index</h2>
+
+
+<div class="notification-container">
+    <div>
 
 <h2>Notifications</h2>
 <div class="container">
@@ -12,7 +18,6 @@
             {
               
                 <li style="display:block;">
-                    <div>
                         <h4>@item.Title</h4>
                         <ul>
                             @if (item.Quantity != null)
@@ -43,5 +48,5 @@
             }
         </ul>
     </div>
-</div>
+</div>*@
 

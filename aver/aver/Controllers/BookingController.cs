@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace aver.Controllers
 {
-    public class BookingController : Controller
+    public class AboutController : Controller
     {
         // GET: Booking
         public ActionResult Index()
@@ -15,7 +15,7 @@ namespace aver.Controllers
             return View();
         }
 
-        public ActionResult BookingFor(int ssn)
+        public ActionResult AboutFor(int ssn)
         {
             BookingItem model = new BookingItem();
             model.Ssn = ssn.ToString();
