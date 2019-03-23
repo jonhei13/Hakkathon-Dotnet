@@ -1,0 +1,47 @@
+﻿@model aver.Models.NotificationViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Notifications</h2>
+<div class="container">
+    <div class="col-md-6">
+        <ul>
+            @foreach (var item in Model.Items)
+            {
+              
+                <li style="display:block;">
+                    <div>
+                        <h4>@item.Title</h4>
+                        <ul>
+                            @if (item.Quantity != null)
+                            {
+                                <li>Fjöldi: @item.Quantity</li>
+                            }
+
+                            @if (item.Uses != null)
+                            {
+                                <li>Skipti: @item.Uses</li>
+                            }
+                            @if (item.Strength != null)
+                            {
+                                <li>Styrkur: @item.Strength</li>
+                            }
+                            @if (item.Instructions != null)
+                            {
+                                <li>@item.Instructions</li>
+                            }
+
+                            <li> @item.Date</li>
+
+                        </ul>
+                        
+                    </div>
+
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
