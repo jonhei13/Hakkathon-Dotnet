@@ -1,10 +1,12 @@
 
+
 using aver.Helpers;
+
+
+using aver.services.ArionApi;
+
 using aver.Models;
 using aver.services;
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +22,10 @@ namespace aver.Controllers
 
         public ActionResult Index()
         {
+
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
             provider.GetMealPlan("low");
+
             return View();
         }
 
