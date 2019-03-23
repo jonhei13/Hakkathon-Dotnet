@@ -11,26 +11,45 @@ namespace aver.Helpers
     public class PersonalizedCardProvider
     {
         public BusinessHelper helper = new BusinessHelper();
+
+        
+
+
+        List<string> reasons = new List<string> { "High Blood Pressure", "Lactose Intolerant", "Pregnancy","Varfarin"};
         public SuggestionViewModel GetPlan(string ssn)
         {
-            List<string> ids = helper.GetDiagnosisIds(ssn);
+            //List<string> ids = helper.GetDiagnosisIds(ssn);
             SuggestionViewModel model = new SuggestionViewModel();
 
 
+            /* High Blood Pressure
+             * Lactose Intolerant
+             * Pregnancy
+             * 
+             */
 
             return model;
 
         }
 
-        public List<SuggestionItem> GetMealPlan(string budget)
+        public List<SuggestionItem> GetMealPlan(string budget ="low")
         {
             List<SuggestionItem> meals = new List<SuggestionItem>();
 
             meals.Add(GetBreatkfast(budget, "isdead"));
-            
+            meals.Add(GetSupper(budget, "isdead"));
+            meals.Add(GetDinner(budget, "isdead"));
+
             return meals;
         }
+        public string GetReason()
+        {
+           
+            Random rnd = new Random();
+            int index =  rnd.Next(reasons.Count());
 
+            return reasons[index];
+        }
         public SuggestionItem GetBreatkfast(string budget, string affliction)
         {
             SuggestionItem item = new SuggestionItem();
@@ -40,22 +59,42 @@ namespace aver.Helpers
             lowBudget.Add(new Food()
             {
                 FoodName = "Epli",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "banani",
-                Explanation = "Holl"
+                FoodName = "Banani",
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "hafragrautur",
-                Explanation = "egg"
+                FoodName = "Hafragrautur",
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "bacon",
-                Explanation = "Holl"
+                FoodName = "Bacon",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Bagel",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Bialy",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Baked Beans",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Ham",
+                Explanation = GetReason()
             });
 
             List<Food> highBUdget = new List<Food>();
@@ -64,38 +103,38 @@ namespace aver.Helpers
             highBUdget.Add(new Food()
             {
                 FoodName = "Kavíar",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "White Truffles",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "Vanilla",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
 
             highBUdget.Add(new Food()
             {
                 FoodName = "DENSUKE WATERMELON",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "SAFFRON",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
 
             if (budget == "low")
@@ -121,23 +160,39 @@ namespace aver.Helpers
             lowBudget.Add(new Food()
             {
                 FoodName = "Samloka",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Hlölla bátur",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Núðlur",
-                Explanation = "egg"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Hamborgari",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Buffalo",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Chilli Dog",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Jelly-O",
+                Explanation = GetReason()
+            });
+
 
             List<Food> highBUdget = new List<Food>();
 
@@ -145,38 +200,38 @@ namespace aver.Helpers
             highBUdget.Add(new Food()
             {
                 FoodName = "Kavíar",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "White Truffles",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "Vanilla",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
 
             highBUdget.Add(new Food()
             {
                 FoodName = "DENSUKE WATERMELON",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "SAFFRON",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
 
             if (budget == "low")
@@ -200,62 +255,65 @@ namespace aver.Helpers
             lowBudget.Add(new Food()
             {
                 FoodName = "Kjúklingur",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Lasagna",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Núðlur",
-                Explanation = "egg"
+                Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
                 FoodName = "Pasta",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
-
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
             List<Food> highBUdget = new List<Food>();
-
 
             highBUdget.Add(new Food()
             {
                 FoodName = "Kavíar",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "White Truffles",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
-                FoodName = "Vanilla",
-                Explanation = "Holl"
+                FoodName = "Oyster",
+                Explanation = GetReason()
             });
 
             highBUdget.Add(new Food()
             {
-                FoodName = "DENSUKE WATERMELON",
-                Explanation = "Holl"
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
-                FoodName = "SAFFRON",
-                Explanation = "Holl"
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
             highBUdget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
-                Explanation = "Holl"
+                Explanation = GetReason()
             });
 
             if (budget == "low")
