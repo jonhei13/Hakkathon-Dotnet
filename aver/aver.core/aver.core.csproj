@@ -82,6 +82,7 @@
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\SuggestionItem.cs" />
     <Compile Include="Models\SuggestionViewModel.cs" />
+    <Compile Include="Models\SuperModel.cs" />
     <Compile Include="Model\Arion\Account\AccountModel.cs" />
     <Compile Include="Model\Arion\Account\AccountTransactions.cs" />
     <Compile Include="Model\Arion\Bank.cs" />

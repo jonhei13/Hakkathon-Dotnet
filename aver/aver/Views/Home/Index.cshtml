@@ -1,29 +1,28 @@
-﻿@{
+﻿@model aver.core.Models.SuperModel
+
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
 
-        <!-- Heading -->
-        <!--Grid row-->
-       
+
         <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
 
         </div>
 
         </div>
-        
+
         <!--Grid row-->
         <!--Grid row-->
 
         <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-            <!--Grid column-->
-
             <!--Grid column-->
             <div class="col-md-6 mb-4">
-                <a href="@Url.Action("Details", "", new { type="breakfast" })">
+                <a href="@Url.Action("Detail", "", new { type="breakfast" })">
                     <!--Card-->
                     <div class="card aqua-gradient">
                         <div class="card-img-top card-image-main img-breakfast">
@@ -46,7 +45,7 @@
             <div class="col-md-6 mb-4">
                 <!--Card-->
                 <div class="card ripe-malinka-gradient">
-                    <a href="@Url.Action("Details", "", new { type="lunch" })">
+                    <a href="@Url.Action("Detail", "", new { type="supper" })">
                         <div class="card-txt">Ráðlagður hádegismatur</div>
 
                         <div class="card-img-top card-image-main img-supper">
@@ -54,52 +53,6 @@
 
                         <!--Card content-->
                         <div class="card-body">
-
-                            <!-- Table  -->
-
-
-                        </div>
-                    </a>
-                </div>
-                <!--/.Card-->
-
-            </div>
-
-
-            <div class="col-md-6 mb-4">
-                <!--Card-->
-                <div class="card winter-neva-gradient">
-                    <a href="@Url.Action("Details", "", new { type="dinner" })">
-
-                        <div class="card-txt">Ráðlagður kvöldmatur</div>
-
-                        <div class="card-img-top card-image-main img-dinner">
-                        </div>
-
-                        <!--Card content-->
-                        <div class="card-body">
-
-                            <!-- Table  -->
-
-
-                        </div>
-                     </a>
-                </div>
-                <!--/.Card-->
-
-            </div>
-            <div class="col-md-6 mb-4">
-
-                <!--Card-->
-                <div class="card blue-gradient">
-                    <a href="@Url.Action("Details", "", new { type="not-allowed" })">
-                        <div class="card-txt">Þú mátt EKKI borða</div>
-
-                        <div class="card-img-top card-image-main img-danger">
-                        </div>
-                        <!--Card content-->
-                        <div class="card-body">
-
                         </div>
                     </a>
                 </div>
@@ -107,5 +60,42 @@
 
             </div>
         </div>
-        <!--Grid row-->
+
+            <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                <div class="col-md-6 mb-4">
+                    <!--Card-->
+                    <div class="card winter-neva-gradient">
+                        <a href="@Url.Action("Detail", "", new { type="dinner" })">
+
+                            <div class="card-txt">Ráðlagður kvöldmatur</div>
+
+                            <div class="card-img-top card-image-main img-dinner">
+                            </div>
+                            <div class="card-body">
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+
+                <div class="col-md-6 mb-4">
+
+                    <!--Card-->
+                    <div class="card blue-gradient">
+                        <a href="@Url.Action("Detail", "", new { type="not-allowed" })">
+                            <div class="card-txt">Þú mátt EKKI borða</div>
+
+                            <div class="card-img-top card-image-main img-danger">
+                            </div>
+                            <!--Card content-->
+                            <div class="card-body">
+
+                            </div>
+                        </a>
+                    </div>
+                    <!--/.Card-->
+
+                </div>
+                </div>
+            <!--Grid row-->
 </main>

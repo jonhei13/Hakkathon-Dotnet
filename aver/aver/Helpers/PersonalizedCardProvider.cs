@@ -11,8 +11,8 @@ namespace aver.Helpers
     public class PersonalizedCardProvider
     {
         public BusinessHelper helper = new BusinessHelper();
+        public Random rnd = new Random();
 
-        
 
 
         List<string> reasons = new List<string> { "High Blood Pressure", "Lactose Intolerant", "Pregnancy","Varfarin"};
@@ -31,29 +31,61 @@ namespace aver.Helpers
             return model;
 
         }
-
+        public SuggestionItem GetByType(string type)
+        {
+            var payload = (type=="breakfast")?GetFullBreakfast():
+                (type=="supper")?GetFullSupper():(type=="dinner")?GetFullDinner():GetFullDinner();
+            return payload;
+        }
         public List<SuggestionItem> GetMealPlan(string budget ="low")
         {
             List<SuggestionItem> meals = new List<SuggestionItem>();
 
             meals.Add(GetBreatkfast(budget, "isdead"));
-            meals.Add(GetSupper(budget, "isdead"));
+            meals.Add(GetSupper("high", "isdead"));
             meals.Add(GetDinner("high", "isdead"));
-
+            meals.Add(GetBannedList());
             return meals;
         }
         public string GetReason()
         {
            
-            Random rnd = new Random();
-            int index =  rnd.Next(reasons.Count());
+            
+            int index =  rnd.Next(reasons.Count);
 
             return reasons[index];
         }
+
+        public SuggestionItem GetBannedList()
+        {
+            SuggestionItem item = new SuggestionItem();
+            List<Food> banned = new List<Food>();
+            item.Title ="Banned";
+
+
+            banned.Add(new Food()
+            {
+                FoodName = "Epli",
+                Explanation = GetReason()
+            });
+            banned.Add(new Food()
+            {
+                FoodName = "Banani",
+                Explanation = GetReason()
+            });
+            banned.Add(new Food()
+            {
+                FoodName = "Hafragrautur",
+                Explanation = GetReason()
+            });
+            item.Foods = banned;
+            return item;
+        }
+
         public SuggestionItem GetBreatkfast(string budget, string affliction)
         {
             SuggestionItem item = new SuggestionItem();
-
+            item.Title = "Breakfast";
             List<Food> lowBudget = new List<Food>();
 
             lowBudget.Add(new Food()
@@ -146,16 +178,237 @@ namespace aver.Helpers
             {
                 item.Foods = highBudget;
             }
-
-            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
+            Random r = new Random();
+            item.Foods = item.Foods.OrderBy(x => r.Next()).Take(3).ToList();
             return item;
         }
 
+        public SuggestionItem GetFullBreakfast()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Breakfast";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
+        public SuggestionItem GetFullSupper()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Supper";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+        }
+        public SuggestionItem GetFullDinner()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Dinner";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+           
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
 
         public SuggestionItem GetSupper(string budget, string affliction)
         {
             SuggestionItem item = new SuggestionItem();
-
+            item.Title = "Supper";
             List<Food> lowBudget = new List<Food>();
 
             lowBudget.Add(new Food()
@@ -245,14 +498,14 @@ namespace aver.Helpers
             {
                 item.Foods = highBudget;
             }
-
-            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
+            Random r = new Random();
+            item.Foods = item.Foods.OrderBy(x =>r.Next()).Take(3).ToList();
             return item;
         }
         public SuggestionItem GetDinner(string budget, string affliction)
         {
             SuggestionItem item = new SuggestionItem();
-
+            item.Title = "Dinner";
             List<Food> lowBudget = new List<Food>();
 
             lowBudget.Add(new Food()
@@ -328,8 +581,8 @@ namespace aver.Helpers
             {
                 item.Foods = highBudget;
             }
-
-            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
+            Random r = new Random();
+            item.Foods = item.Foods.OrderBy(x => r.Next()).Take(3).ToList();
             return item;
         }
     }

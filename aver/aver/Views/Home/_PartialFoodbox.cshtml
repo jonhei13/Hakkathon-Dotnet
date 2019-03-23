@@ -1,9 +1,12 @@
-﻿<div class="col-md-6 mb-4">
+﻿@model aver.Models.SuggestionItem
+
+<div class="col-md-6 mb-4">
     <!--Card-->
+    <
     <div class="card">
 
 
-        <div class="card-header">Ráðlagður morgunmatur</div>
+        <div class="card-header">@Model.Title</div>
 
         <div class="card-img-top card-image-main img-breakfast">
         </div>
@@ -30,16 +33,15 @@
                 <!-- Table head -->
                 <!-- Table body -->
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Cell 1</td>
-                        <td>Cell 2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Cell 4</td>
-                        <td>Cell 5</td>
-                    </tr>
+                    @foreach (var food in Model.Foods)
+                    {
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>@food.FoodName</td>
+                            <td>@food.Explanation</td>
+                        </tr>
+                    }
+                    
                 </tbody>
                 <!-- Table body -->
             </table>
