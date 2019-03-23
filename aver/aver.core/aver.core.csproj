@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Food.cs" />
     <Compile Include="Models\BookingItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
     <Compile Include="Models\HistoryViewModel.cs" />

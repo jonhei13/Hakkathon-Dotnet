@@ -24,16 +24,9 @@ namespace aver.Controllers
           
             return items;
         }
+        
 
-
-        public string SuggestionTable()
-        {
-            List<SuggestionItem> suggestions = new List<SuggestionItem>();
-
-
-            return "";
-        }
-
+        
         
     }
 }
