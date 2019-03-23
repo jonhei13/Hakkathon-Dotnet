@@ -189,6 +189,7 @@
     <Content Include="Views\Suggestions\Index.cshtml" />
     <Content Include="Views\Booking\BookingFor.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Home\_PartialFoodbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
