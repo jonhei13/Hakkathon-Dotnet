@@ -11,7 +11,7 @@ namespace aver.Models
         public String Name { get; set; }
         public String BloodPressure { get; set; }
         public int Budget{ get; set; }
-
+        public List<string> Medication { get; set; }
         public DateTime Date { get; set; }
         public string Title { get; set; }
     }

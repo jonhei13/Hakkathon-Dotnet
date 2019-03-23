@@ -26,7 +26,13 @@ namespace aver.Controllers
             allergies.Add("ofnæmi2");
             allergies.Add("ofnæmi3");
 
-            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill", Allergies=allergies, Budget = 22222, BloodPressure = "AOK"});
+            List<string> medication = new List<string>();
+
+            medication.Add("Med 1");
+            medication.Add("Med 2");
+            medication.Add("Med 3");
+
+            items.Add(new UserItem { Date = DateTime.Now, Title = "Flottur titill", Allergies=allergies, Budget = 22222, BloodPressure = "AOK", Medication = medication});
             
             return items;
         }

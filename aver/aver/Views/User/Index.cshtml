@@ -9,11 +9,11 @@
 
 
 <!-- Card -->
-<div class="card">
+<div class="card" >
 
     <!-- Card image -->
     <div class="view overlay">
-        <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAkwPeS3Q8gSIrdgYuhWQuH97V1kkVHcbzX5JNJ9urgJ-Mo043" alt="Card image cap">
         <a href="#!">
             <div class="mask rgba-white-slight"></div>
         </a>
@@ -23,18 +23,36 @@
     <div class="card-body">
 
         <!-- Title -->
-        <h4 class="card-title">About you</h4>
+        <h4 class="card-title" style="">About you</h4>
         <!-- Text -->
-        <p class="card-text">This is what we know about you</p>
+        <p class="card-text" style="merge-bottom: 5px;">This is what we know about you</p>
         <!-- Button -->
         @foreach (var item in Model.Items)
         {
-            <p class="card-text">Bloodpressure  @item.BloodPressure</p>
-            <p class="card-text">Allergies
-        
-            @item.Allergies</p>
+            <p class="card-text"  style="font-weight: bold">Bloodpressure  @item.BloodPressure</p>
+            <p class="card-text" style="font-weight: bold">
+                Allergies
+                <ul>
+                    @foreach (var allergy in @item.Allergies)
+                    {
+                        <li class="card-text" style="list-style: none">@allergy</li>
+                    }
+                </ul>
 
-            <p class="card-text">Budget: @item.Budget</p>
+            </p>
+
+            <p class="card-text"  style="font-weight: bold">
+                Medication
+                <ul>
+                    @foreach (var med in @item.Medication)
+                    {
+                        <li class="card-text" style="list-style: none">@med</li>
+                    }
+                </ul>
+
+            </p>
+
+            <p class="card-text" style="font-weight: bold;">Budget: @item.Budget</p>
         }
 
     </div>
