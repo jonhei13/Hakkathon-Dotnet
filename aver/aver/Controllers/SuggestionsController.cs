@@ -21,11 +21,12 @@ namespace aver.Controllers
         {
             List<SuggestionItem> items = new List<SuggestionItem>();
 
-            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message ="Ristilskoðun"});
-            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message = "Ristilspeglun" });
-            items.Add(new SuggestionItem { DateSinceLast = DateTime.Now, Message = "Legsokoðun" });
-           
+          
             return items;
         }
+        
+
+        
+        
     }
 }
