@@ -70,6 +70,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="Models\BookingItem.cs" />
+    <Compile Include="Models\HistoryItem.cs" />
+    <Compile Include="Models\HistoryViewModel.cs" />
+    <Compile Include="Models\HomeScreenViewModel.cs" />
+    <Compile Include="Models\NotificationViewModel.cs" />
+    <Compile Include="Models\OrigoTreatmentModel.cs" />
+    <Compile Include="Models\StatisticsItem.cs" />
+    <Compile Include="Models\StatisticsViewModel.cs" />
+    <Compile Include="Models\SuggestionItem.cs" />
+    <Compile Include="Models\SuggestionViewModel.cs" />
+
     <Compile Include="Model\Arion\Account\AccountModel.cs" />
     <Compile Include="Model\Arion\Account\AccountTransactions.cs" />
     <Compile Include="Model\Arion\Bank.cs" />
@@ -78,6 +90,7 @@
     <Compile Include="Model\Arion\Claims\Transaction\ClaimTransactions.cs" />
     <Compile Include="Model\Arion\CreditCards\CreditCardModel.cs" />
     <Compile Include="Model\Arion\CreditCards\CreditCardTransactions.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
