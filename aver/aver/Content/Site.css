@@ -85,3 +85,7 @@ textarea {
         font-size: 18px;
         text-align: left !important;
     }
+.navbar a {
+    color: #2fa7bf;
+    font-weight: 500;
+}
