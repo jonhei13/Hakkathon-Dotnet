@@ -30,73 +30,27 @@
 </head>
 <body>
 
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a href="Home" class="nav-link waves-effect waves-light">
-                        Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="Notifications">Tilkynningar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="Booking">Bóka</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light" href="User">About</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-google-plus-g"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item waves-effect waves-light" href="Settings">Stillingar</a>
-                        @*<a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
-                        <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>*@
-                    </div>
-                </li>
-            </ul>
+    <nav class="navbar navbar-fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src=".././Content/imgs/linkedin_banner_image_1.png" height="100" alt="mdb logo">
+        </a>
+        <div style="    margin-top: 31px">
+            <a href="Home" class="nav-link waves-effect waves-light">
+                Home
+                <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-link waves-effect waves-light" href="Notifications">Tilkynningar</a>
+
+            <a class="nav-link waves-effect waves-light" href="User">Settings</a>
         </div>
+        <div>
+            <img src=".././Content/imgs/linkedin_banner_image_1.png" height="100" alt="mdb logo">
+
+        </div>
+
     </nav>
 
-    @*<div class="navbar navbar-inverse navbar-fixed-top  ">
-            <div class="container">
-                <div class="navbar-header" style="display: flex; align-items: center;">
-                    @Html.ActionLink("Awake", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    <div class=" container-fluid">
-                        <div style="display: inline-block;">
-                            <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("Tilkynningar", "Index", "Notifications")</li>
-                                <li>@Html.ActionLink("Bóka", "Index", "Booking")</li>
-                                <li>@Html.ActionLink("History", "Index", "History")</li>
-                                <li>@Html.ActionLink("Stillingar", "Index", "Settings")</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>*@
+  
 
     <div class="container body-content">
         @RenderBody()
