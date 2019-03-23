@@ -1,0 +1,17 @@
+﻿@model aver.Models.BookingItem
+@{
+    ViewBag.Title = "BookingFor";
+}
+<div class="col-md-6">
+    <h2>Bóka tíma fyrir @Model.Name</h2>
+    <ul>
+        <li>Læknir: @Model.Ssn</li>
+        <li>Næsti lausi tími: @Model.NextAvailible</li>
+
+    </ul>
+
+    <div class="btn btn-success">
+        Staðfesta
+    </div>
+
+</div>

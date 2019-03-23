@@ -134,9 +134,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingItem.cs" />
     <Compile Include="Models\HistoryItem.cs" />
     <Compile Include="Models\HistoryViewModel.cs" />
     <Compile Include="Models\NotificationViewModel.cs" />
+    <Compile Include="Models\SuggestionItem.cs" />
+    <Compile Include="Models\SuggestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,11 +181,12 @@
     <Content Include="Views\History\Index.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Notifications\Index.cshtml" />
+    <Content Include="Views\Suggestions\Index.cshtml" />
+    <Content Include="Views\Booking\BookingFor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Hisroty\" />
-    <Folder Include="Views\Suggestions\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
