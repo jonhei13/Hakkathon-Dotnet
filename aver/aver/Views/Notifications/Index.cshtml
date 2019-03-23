@@ -1,7 +1,7 @@
 ﻿@model aver.Models.NotificationViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tilkynningar";
 }
 
 <h2>Index</h2>
@@ -13,7 +13,7 @@
                 <li style="display:block;">
                     <div>
                         <h4>
-                            <a class="btn btn-default" data-toggle="collapse" href="#collapse1">@item.Title</a>
+                            <a class="btn" data-toggle="collapse" href="#collapse1"><span class="glyphicon glyphicon-plus"></span> @item.Title</a>
                         </h4>
                         <div id="collapse1" class="panel-collapse collapse">
                             <p>@item.Desctiption</p>
