@@ -31,7 +31,12 @@ namespace aver.Helpers
             return model;
 
         }
-
+        public SuggestionItem GetByType(string type)
+        {
+            var payload = (type=="breakfast")?GetFullBreakfast():
+                (type=="supper")?GetFullSupper():(type=="dinner")?GetFullDinner():GetFullDinner();
+            return payload;
+        }
         public List<SuggestionItem> GetMealPlan(string budget ="low")
         {
             List<SuggestionItem> meals = new List<SuggestionItem>();
@@ -178,6 +183,227 @@ namespace aver.Helpers
             return item;
         }
 
+        public SuggestionItem GetFullBreakfast()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Breakfast";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
+        public SuggestionItem GetFullSupper()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Supper";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+        }
+        public SuggestionItem GetFullDinner()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Dinner";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+           
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
 
         public SuggestionItem GetSupper(string budget, string affliction)
         {

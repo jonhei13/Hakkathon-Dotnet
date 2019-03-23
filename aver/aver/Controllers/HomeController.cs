@@ -31,6 +31,13 @@ namespace aver.Controllers
             model.FoodCards = provider.GetMealPlan("low");
             return View(model);
         }
+        public ActionResult Detail(string type)
+        {
+            PersonalizedCardProvider provider = new PersonalizedCardProvider();
+            SuggestionItem model = provider.GetByType(type);
+
+            return View(model);
+        }
 
 
         
