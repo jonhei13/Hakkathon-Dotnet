@@ -52,9 +52,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -70,11 +70,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Food.cs" />
     <Compile Include="Models\BookingItem.cs" />
+    <Compile Include="Models\Food.cs" />
     <Compile Include="Models\HistoryItem.cs" />
     <Compile Include="Models\HistoryViewModel.cs" />
     <Compile Include="Models\HomeScreenViewModel.cs" />
+    <Compile Include="Models\Icd10Model.cs" />
     <Compile Include="Models\NotificationViewModel.cs" />
     <Compile Include="Models\OrigoTreatmentModel.cs" />
     <Compile Include="Models\StatisticsItem.cs" />

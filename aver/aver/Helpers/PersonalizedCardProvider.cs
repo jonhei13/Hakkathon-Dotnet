@@ -38,7 +38,7 @@ namespace aver.Helpers
 
             meals.Add(GetBreatkfast(budget, "isdead"));
             meals.Add(GetSupper(budget, "isdead"));
-            meals.Add(GetDinner(budget, "isdead"));
+            meals.Add(GetDinner("high", "isdead"));
 
             return meals;
         }
@@ -97,41 +97,41 @@ namespace aver.Helpers
                 Explanation = GetReason()
             });
 
-            List<Food> highBUdget = new List<Food>();
+            List<Food> highBudget = new List<Food>();
 
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Kavíar",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "White Truffles",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Vanilla",
                 Explanation = GetReason()
             });
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "DENSUKE WATERMELON",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "SAFFRON",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
                 Explanation = GetReason()
@@ -139,14 +139,15 @@ namespace aver.Helpers
 
             if (budget == "low")
             {
-                item.Foods.AddRange(lowBudget.Take(3).ToList());
+                item.Foods= lowBudget;
             }
             
             else
             {
-                item.Foods.AddRange(highBUdget.Take(3).ToList());
+                item.Foods = highBudget;
             }
 
+            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
             return item;
         }
 
@@ -194,56 +195,58 @@ namespace aver.Helpers
             });
 
 
-            List<Food> highBUdget = new List<Food>();
+            List<Food> highBudget = new List<Food>();
 
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Kavíar",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "White Truffles",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Vanilla",
                 Explanation = GetReason()
             });
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "DENSUKE WATERMELON",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "SAFFRON",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
                 Explanation = GetReason()
             });
 
+
             if (budget == "low")
             {
-                item.Foods.AddRange(lowBudget.Take(3).ToList());
+                item.Foods = lowBudget;
             }
 
             else
             {
-                item.Foods.AddRange(highBUdget.Take(3).ToList());
+                item.Foods = highBudget;
             }
 
+            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
             return item;
         }
         public SuggestionItem GetDinner(string budget, string affliction)
@@ -277,40 +280,40 @@ namespace aver.Helpers
                 FoodName = "Lobster Rolls",
                 Explanation = GetReason()
             });
-            List<Food> highBUdget = new List<Food>();
+            List<Food> highBudget = new List<Food>();
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Kavíar",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "White Truffles",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Oyster",
                 Explanation = GetReason()
             });
 
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Mozzarella sticks",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "Tuna Casserol",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MATCHA GREEN TEA",
                 Explanation = GetReason()
             });
-            highBUdget.Add(new Food()
+            highBudget.Add(new Food()
             {
                 FoodName = "MOOSE MILK CHEESE",
                 Explanation = GetReason()
@@ -318,14 +321,15 @@ namespace aver.Helpers
 
             if (budget == "low")
             {
-                item.Foods.AddRange(lowBudget.Take(3).ToList());
+                item.Foods = lowBudget;
             }
 
             else
             {
-                item.Foods.AddRange(highBUdget.Take(3).ToList());
+                item.Foods = highBudget;
             }
 
+            item.Foods = item.Foods.OrderBy(x => new Random().Next()).Take(3).ToList();
             return item;
         }
     }
