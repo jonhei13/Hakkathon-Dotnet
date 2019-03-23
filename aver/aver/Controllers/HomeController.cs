@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aver.services.ArionApi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,11 @@ namespace aver.Controllers
     {
         public ActionResult Index()
         {
+            var x = new ArionApi();
+            //var bla = x.GetClaims(1, 50);
+            //var account = x.GetAccountStatus();
+            //var bla = x.GetBankInfo();
+            //var da = x.GetCreditCardInfo();
             return View();
         }
 
