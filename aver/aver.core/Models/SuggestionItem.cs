@@ -7,8 +7,11 @@ namespace aver.Models
 {
     public class SuggestionItem
     {
-        public string Message { get; set; }
-        public DateTime DateSinceLast { get; set; }
+        public string Affliction { get; set; }
+        public int AgeUpper { get; set; }
+        public int AgeLower { get; set; }
+        public int FrequencyInYears { get; set; }
+        public int FrequencyInMonths { get; set; }
 
     }
 }
