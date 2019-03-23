@@ -1,4 +1,5 @@
 
+using aver.Helpers;
 using aver.Models;
 using aver.services;
 
@@ -19,8 +20,8 @@ namespace aver.Controllers
 
         public ActionResult Index()
         {
-
-
+            PersonalizedCardProvider provider = new PersonalizedCardProvider();
+            provider.GetMealPlan("low");
             return View();
         }
 
