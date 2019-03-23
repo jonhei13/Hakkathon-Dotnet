@@ -36,10 +36,17 @@ namespace aver.services
                 });
                 data.ReturnData.TreatmentPlans.ForEach((item) => 
                 {
-                    item.TreatmentItems.ForEach((subitem) => 
+                    NotificationItem temp = new NotificationItem();
+                    temp.Date = item.EndDate;
+                    temp.Title = $"{item.ResponsibleHCProvider} - {item.TreatmentItems.Count}";
+                    temp.Instructions = "Aðgerðir: ";
+                    item.TreatmentItems.ForEach((subitem) =>
                     {
-
+                        temp.Instructions +=$"{subitem.TreatmentType} ";
+                           
+                       
                     });
+                    items.Add(temp);
                 });
 
             }
