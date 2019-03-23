@@ -7,8 +7,8 @@ namespace aver.core.Models
 {
     public class OrigoAppointmentData
     {
-        public int Id { get; set; }
-        public int? ArrivalId { get; set; }
+        public double Id { get; set; }
+        public double? ArrivalId { get; set; }
         public DateTime AppointmentTime { get; set; }
         public string Location { get; set; }
         public string Resource { get; set; }
@@ -16,8 +16,8 @@ namespace aver.core.Models
 
     public class OrigoArrivalData
     {
-        public int Id { get; set; }
-        public int AppointmentId { get; set; }
+        public double Id { get; set; }
+        public double AppointmentId { get; set; }
         public DateTime ArrivalDate { get; set; }
         public string HealthcareProvider { get; set; }
         public string TypeOfHealthcare { get; set; }
@@ -26,8 +26,8 @@ namespace aver.core.Models
 
     public class OrigoEncounterData
     {
-        public int Id { get; set; }
-        public int ArrivalId { get; set; }
+        public double Id { get; set; }
+        public double ArrivalId { get; set; }
         public string Description { get; set; }
         public string ReferralId { get; set; }
     }
@@ -52,7 +52,7 @@ namespace aver.core.Models
 
     public class OrigoMeasurementsData
     {
-        public int Id { get; set; }
+        public double Id { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public List<OrigoMeasurementItem> MeasurementItems { get; set; }
@@ -70,7 +70,7 @@ namespace aver.core.Models
 
     public class OrigoDiagnosisData
     {
-        public int Id { get; set; }
+        public double Id { get; set; }
         public List<int> TreatmentPlanIds { get; set; }
         public DateTime Date { get; set; }
         public string IcD10Code { get; set; }
@@ -81,11 +81,11 @@ namespace aver.core.Models
     {
         public string Description { get; set; }
         public string Form { get; set; }
-        public int? Strength { get; set; }
+        public double? Strength { get; set; }
         public string StrengthUnit { get; set; }
-        public int? MorningDose { get; set; }
-        public int? AfternoonDose { get; set; }
-        public int? EveningDose { get; set; }
+        public double? MorningDose { get; set; }
+        public double? AfternoonDose { get; set; }
+        public double? EveningDose { get; set; }
         public string Instructions { get; set; }
     }
 
@@ -100,7 +100,7 @@ namespace aver.core.Models
 
     public class OrigoTreatmentPlan
     {
-        public int Ad { get; set; }
+        public double Ad { get; set; }
         public List<int> DiagnosisIds { get; set; }
         public string Type { get; set; }
         public DateTime StartDate { get; set; }
@@ -112,12 +112,12 @@ namespace aver.core.Models
 
     public class OrigoReferralData
     {
-        public int ReferralId { get; set; }
+        public double ReferralId { get; set; }
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
         public string IssuedBy { get; set; }
         public string Specialty { get; set; }
-        public int Status { get; set; }
+        public double Status { get; set; }
         public string PatientHistory { get; set; }
         public string Request { get; set; }
     }
@@ -146,14 +146,14 @@ namespace aver.core.Models
         public string Form { get; set; }
         public DateTime LastPrescribed { get; set; }
         public string Name { get; set; }
-        public int NumberOfPackings { get; set; }
-        public int NumberOfTimes { get; set; }
+        public double NumberOfPackings { get; set; }
+        public double NumberOfTimes { get; set; }
         public bool OneTimeOnly { get; set; }
         public object PrescriptionEnds { get; set; }
-        public int Quantity { get; set; }
-        public int Strength { get; set; }
+        public double Quantity { get; set; }
+        public double Strength { get; set; }
         public string StrengthUnit { get; set; }
-        public int TotalQuantity { get; set; }
+        public double TotalQuantity { get; set; }
     }
 
     public class OrigoReturnData
