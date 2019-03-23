@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aver.services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,8 @@ namespace aver.Controllers
     {
         public ActionResult Index()
         {
+            OrigoAPI x = new OrigoAPI();
+            core.Models.OrigoRootObject d = x.GetPationtData("0206929999");
             return View();
         }
 
