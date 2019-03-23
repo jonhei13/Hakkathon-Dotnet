@@ -5,9 +5,8 @@ using System.Web;
 
 namespace aver.Models
 {
-    public class HistoryItem
+    public class UserViewModel
     {
-        public DateTime Date { get; set; }
-        public string Title { get; set; }
+        public List<UserItem> Items { get; set; }
     }
 }
