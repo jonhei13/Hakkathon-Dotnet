@@ -11,9 +11,13 @@ namespace aver.services
 {
     public class OrigoAPI
     {
+        public OrigoAPI()
+        {
+
+        }
         private const string OrigoUrl = "http://healthapi.hc.t.is";
 
-        public static OrigoRootObject GetPationtData(string patientSSN)
+        public OrigoRootObject GetPationtData(string patientSSN)
         {
             var client = new HttpClient
             {
