@@ -4,41 +4,137 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Bootstrap core CSS -->
+    @*<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">*@
+
+    @*<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>*@
+
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>*@
+    <!-- Material Design Bootstrap -->
+    @*<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet" />*@
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+
     @Styles.Render("~/Content/css")
+
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("Awake", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            
+
+
+    @*<li>@Html.ActionLink("Tilkynningar", "Index", "Notifications")</li>
+        <li>@Html.ActionLink("Bóka", "Index", "Booking")</li>
+        <li>@Html.ActionLink("History", "Index", "History")</li>
+        <li>@Html.ActionLink("Stillingar", "Index", "Settings")</li>*@
+
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link waves-effect waves-light">
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Tilkynningar", "Index", "Notifications")</li>
+                <li>@Html.ActionLink("Bóka", "Index", "Booking")</li>
+                <li>@Html.ActionLink("History", "Index", "History")</li>
+                <li>@Html.ActionLink("Stillingar", "Index", "Settings")</li>*@
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="Notifications">Tilkynningar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="Booking">Bóka</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="History">Saga</a>
+                </li>
+                
+                @*<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-3">
+                    </div>
+                </li>*@
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item waves-effect waves-light" href="Settings">Stillingar</a>
+                        @*<a class="dropdown-item waves-effect waves-light" href="#">Another action</a>
+                        <a class="dropdown-item waves-effect waves-light" href="#">Something else here</a>*@
+                    </div>
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <div class="navbar navbar-fixed-bottom navbar-inverse">
-                <div class=" container-fluid">    
-                    <div style="display: inline-block;">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Tilkynningar", "Index", "Notifications")</li>
-                            <li>@Html.ActionLink("Bóka", "Index", "Booking")</li>
-                            <li>@Html.ActionLink("History", "Index", "History")</li>
-                            <li>@Html.ActionLink("Stillingar", "Index", "Settings")</li>
-                        </ul>
+    </nav>
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top  ">
+            <div class="container">
+                <div class="navbar-header" style="display: flex; align-items: center;">
+                    @Html.ActionLink("Awake", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    <div class=" container-fluid">
+                        <div style="display: inline-block;">
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li>@Html.ActionLink("Tilkynningar", "Index", "Notifications")</li>
+                                <li>@Html.ActionLink("Bóka", "Index", "Booking")</li>
+                                <li>@Html.ActionLink("History", "Index", "History")</li>
+                                <li>@Html.ActionLink("Stillingar", "Index", "Settings")</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-             </div>
 
-        </footer>
+            </div>
+        </div>*@
+
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />*@
+        <footer></footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+
+    @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>
