@@ -1,6 +1,7 @@
 ﻿
 
 using aver.Models;
+using System;
 using System.Collections.Generic;
 
 namespace aver.services
@@ -31,14 +32,14 @@ namespace aver.services
                     temp.Title =  $"Úthlutun lyfja - {item.Name} - {item.Strength}{item.StrengthUnit}";
                     temp.Uses = item.NumberOfTimes.ToString();
                     temp.Quantity = item.Quantity.ToString();
-                    temp.Instructions = item.Instructions;
+                    temp.Instructions = $"Leiðbeiningar: {item.Instructions}";
                     items.Add(temp);
                 });
                 data.ReturnData.TreatmentPlans.ForEach((item) => 
                 {
                     NotificationItem temp = new NotificationItem();
                     temp.Date = item.EndDate;
-                    temp.Title = $"{item.ResponsibleHCProvider} - {item.TreatmentItems.Count}";
+                    temp.Title = $"{item.ResponsibleHCProvider} -  Yfirlit";
                     temp.Instructions = "Aðgerðir: ";
                     item.TreatmentItems.ForEach((subitem) =>
                     {
@@ -47,6 +48,19 @@ namespace aver.services
                        
                     });
                     items.Add(temp);
+                });
+                
+                data.ReturnData.AppointmentData.ForEach((item) =>
+                {
+                    if (item.AppointmentTime > DateTime.Now )
+                    {
+                        NotificationItem temp = new NotificationItem();
+                        temp.Title = $"Bókaður tími";
+                        temp.Instructions = $"Þú átt bókaðan í {item.Location} tíma hjá {item.Resource}  kl {item.AppointmentTime.Hour}:{item.AppointmentTime.Minute} þann {item.AppointmentTime.ToShortDateString()}";
+                        temp.Date =  item.AppointmentTime;
+                        items.Add(temp);
+                    }
+                    
                 });
 
             }
