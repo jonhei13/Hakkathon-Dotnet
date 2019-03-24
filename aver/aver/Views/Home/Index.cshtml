@@ -7,82 +7,23 @@
 
 <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
-        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-
-            <div class="col-md-6 mb-4">
+        <div class="row wow" style="visibility: visible; animation-name: fadeIn;">
+            <div class="col-md-12 mb-4">
                 <div class="card">
-                    <div class="card-header">Your status</div>
-                    <!--Card content-->
                     <div class="card-body">
-
-                        <!-- List group links -->
-                        <div class="list-group list-group-flush">
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Weight
-                                <span class="badge badge-danger badge-pill pull-right">
-                                    80kg
-                                    <i class="fas fa-arrow-up ml-1"></i>
-                                </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Height
-                                <span class="badge badge-default badge-pill pull-right">
-                                    186cm
-                                    <i class="ml-1"></i>
-                                </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Blood pressure
-                                <span class="badge badge-danger badge-pill pull-right">
-                                    182
-                                    <i class="fas fa-arrow-up ml-1"></i>
-                                </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Days since last doctor visit
-                                <span class="badge badge-primary badge-pill pull-right">34 days</span>
-                            </a>
+                        <div class="info-txt">
+                            <h2 class="header-txt">Welcome to Averi</h2>
+                            <p>We have taken the steps to customize profile based on your finanacial records and medical records.</p>
+                            <p>We know that it is hard work to get healthy but do not worry we are her to <span class="sub-txt">help you!</span><p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">Financial status</div>
-                    <!--Card content-->
-                    <div class="card-body">
-                        <!-- List group links -->
-                        <div class="list-group list-group-flush">
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Monthly salary
-                                <span class="badge badge-default badge-pill pull-right">
-                                    100.000 kr
-                                </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Total monthly budget
-                                <span class="badge badge-default badge-pill pull-right">
-                                    180.000 kr
-                                </span>
-                            </a>
-                            <a class="list-group-item list-group-item-action waves-effect">
-                                Suggested food spending budged
-                                <span class="badge badge-default badge-pill pull-right">
-                                    80.000 kr
-                                    <i class="ml-1"></i>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
     </div>
-    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-        <div class="col-md-6 mb-4">
+    <div class="row wow " style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4 fadeIn">
             <!--Card-->
             <a href="@Url.Action("Detail", "", new { type="breakfast" })">
                 <!--Card-->
@@ -93,7 +34,7 @@
 
                     <!--Card content-->
                     <div class="card-body">
-                        <div class="card-txt">Ráðlagður morgunmatur</div>
+                        <div class="card-txt">Breakfast Suggestions</div>
                     </div>
 
                 </div>
@@ -101,14 +42,10 @@
             </a>
         </div>
         <!--Grid column-->
-    </div>
-
-
-    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4 fadeIn">
             <div class="card ripe-malinka-gradient">
                 <a href="@Url.Action("Detail", "", new { type="supper" })">
-                    <div class="card-txt">Ráðlagður hádegismatur</div>
+                    <div class="card-txt">Lunch Suggestions</div>
 
 
                     <div class="card-img-top card-image-main img-supper">
@@ -122,42 +59,72 @@
             <!--/.Card-->
         </div>
     </div>
+    <div class="row wow" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4 fadeIn">
+            <!--Card-->
+            <div class="card young-passion-gradient">
+                <a href="@Url.Action("Detail", "", new { type="dinner" })">
 
-        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-            <div class="col-md-6 mb-4">
-                <!--Card-->
-                <div class="card winter-neva-gradient">
-                    <a href="@Url.Action("Detail", "", new { type="dinner" })">
+                    <div class="card-txt">Dinner Suggestions</div>
 
-                        <div class="card-txt">Ráðlagður kvöldmatur</div>
-
-                        <div class="card-img-top card-image-main img-dinner">
-                        </div>
-                        <div class="card-body">
-                        </div>
-                </div>
+                    <div class="card-img-top card-image-main img-dinner">
+                    </div>
+                    <div class="card-body">
+                    </div>
             </div>
         </div>
-        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4 fadeIn">
 
-            <div class="col-md-6 mb-4">
+            <!--Card-->
+            <div class="card blue-gradient">
+                <a href="@Url.Action("Detail", "", new { type="not-allowed" })">
+                    <div class="card-txt">Avoid These</div>
 
-                <!--Card-->
-                <div class="card blue-gradient">
-                    <a href="@Url.Action("Detail", "", new { type="not-allowed" })">
-                        <div class="card-txt">Þú mátt EKKI borða</div>
+                    <div class="card-img-top card-image-main img-danger">
+                    </div>
+                    <!--Card content-->
+                    <div class="card-body">
 
-                        <div class="card-img-top card-image-main img-danger">
-                        </div>
-                        <!--Card content-->
-                        <div class="card-body">
-
-                        </div>
-                    </a>
-                </div>
-                <!--/.Card-->
-
+                    </div>
+                </a>
             </div>
+            <!--/.Card-->
+
         </div>
+    </div>
+    <div class="row wow" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4 ">
+            <div class="card financial-card aqua-gradient">
+                
+                <!--Card content-->
+                <div class="card-body">
+                    <!-- List group links -->
+                    <div class="financial-txt">Financial status</div>
+                    <div class="financial-body">
+                        <div style="color:white;">
+                            Monthly salary
+                            <span class="badge badge-default badge-pill pull-right">
+                                100.000 kr
+                            </span>
+                        </div>
+                        <div style="color:white;">
+                            Total monthly budget
+                            <span class="badge badge-default badge-pill pull-right">
+                                180.000 kr
+                            </span>
+                        </div>
+                        <div style="color:white;">
+                            Suggested food spending budged
+                            <span class="badge badge-default badge-pill pull-right">
+                                80.000 kr
+                                <i class="ml-1"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+       </div>
+
         <!--Grid row-->
 </main>
