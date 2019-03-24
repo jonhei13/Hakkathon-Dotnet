@@ -4,6 +4,10 @@
 
 /*background: url(http://worldartsme.com/images/good-breakfast-clipart-1.jpg) no-repeat*/
 
+body {
+    background: rgba(254,254,254,1);
+}
+
 .img-danger {
     background: url(https://upstater.com/wp-content/uploads/2015/08/no-food-or-drinks-520x520.png) no-repeat;
 }
