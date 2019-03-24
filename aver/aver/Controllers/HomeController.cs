@@ -13,21 +13,22 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using aver.core.Models;
+using aver.core.Model.Arion.FinancialData;
 
 namespace aver.Controllers
 {
     public class HomeController : Controller
     { 
 
-         public BusinessHelper helper = new BusinessHelper();
+        public BusinessHelper helper = new BusinessHelper();
+        public ArionApi arionHelper = new ArionApi();
 
         public ActionResult Index()
         {
-
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
-          
+            FinancialModel finmod = arionHelper.GetFinancialStatus();
             SuperModel model = new SuperModel();
-
+            model.Finance = finmod;
             model.FoodCards = provider.GetMealPlan("low");
             return View(model);
         }
