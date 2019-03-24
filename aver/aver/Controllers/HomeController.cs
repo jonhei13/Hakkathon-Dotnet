@@ -36,11 +36,7 @@ namespace aver.Controllers
 
 
            
-            List<Icd10Model> classifications = new List<Icd10Model>();
-            helper.GetDiagnosisIds("0206929999").ForEach((code) =>
-            {
-                classifications.Add(icdHelper.GetIcd10Classification(code));
-            });
+            
 
 
             return View(model);

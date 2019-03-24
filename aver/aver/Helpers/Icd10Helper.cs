@@ -15,7 +15,7 @@ namespace aver.Helpers
             WebClient client = new WebClient();
 
 
-            string jsonData = client.DownloadString($"http://www.icd10api.com/?code={id}&desc=short&r=json");
+            string jsonData = client.DownloadString($"http://www.icd10api.com/?code={id}&desc=long&r=json");
             return JsonConvert.DeserializeObject<Icd10Model>(jsonData);
         }
     }

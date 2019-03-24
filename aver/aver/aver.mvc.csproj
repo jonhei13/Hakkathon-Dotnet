@@ -135,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Icd10Helper.cs" />
     <Compile Include="Models\UserItem.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Helpers\PersonalizedCardProvider.cs" />

@@ -1,11 +1,17 @@
-﻿
+﻿@model aver.core.Models.Settings
 @{
     ViewBag.Title = "Index";
 }
 
 
 <div class="container">
-   
+   @foreach (var item in Model.Classifications)
+   {
+         <p>Skráð af Læknir Jónsson</p>
+         <p>Icd10 Code :@item.Name</p>
+         <p>Description: @item.Description</p>
+        
+   }
 
 
 </div>
