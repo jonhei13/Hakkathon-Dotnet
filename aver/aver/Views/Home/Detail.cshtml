@@ -17,14 +17,17 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <ul class="list-group">
+        @foreach (var foods in Model.Foods)
+        {
 
-<ul class="list-group">
-    @foreach (var foods in Model.Foods)
-    {
-        <li class="list-group-item">
-            @foods.FoodName
-            <p style="color:lightgray">Because of @foods.Explanation</p>
-        </li>
-    }
-</ul>
-
+            var identifier = foods.FoodName.ToString().Trim();
+            <li class="list-group-item" data-toggle="collapse" data-target="#@identifier" style="    margin-bottom: 30px;">
+                <p style="font-weight:500;">@foods.FoodName</p>
+                <p style="color:lightgray">Because of @foods.Explanation</p>
+                <div id="@identifier" class="collapse in">@foods.Description</div>
+            </li>
+        }
+    </ul>
+</div>
