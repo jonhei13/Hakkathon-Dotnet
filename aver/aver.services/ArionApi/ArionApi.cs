@@ -45,7 +45,7 @@ namespace aver.services.ArionApi
 
         public int GetTotalClaims(DateTime? From, DateTime? To, string ssn)
         {
-            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/claims/v1/claims?page={0}&perPage={1}&claimantKennitala={2}&dateFrom={3}&dateTo{4}", "1", "1500", ssn, To.HasValue ? To.Value.ToString() : "", From.HasValue ? From.Value.ToString() : "")).Result;
+            HttpResponseMessage response = client.GetAsync(string.Format("https://arionapi-sandbox.azure-api.net/claims/v1/claims?page={0}&perPage={1}&claimantKennitala={2}&dateFrom={3}&dateTo{4}", "1", "1500", ssn, "2013-01-01", "2019-01-01")).Result;
             var claims = new ClaimsModel();
             if (response.IsSuccessStatusCode)
             {
@@ -115,7 +115,7 @@ namespace aver.services.ArionApi
             model.TotalAmount = totalSalaryFor6Months;
 
 
-            model.AmountAfterBills = totalSalaryFor6Months - claims;
+            model.AmountAfterBills = totalSalaryFor6Months - 80000;
             if(model.AmountAfterBills < 100000)
             {
                 model.AllegedFoodCost = 30000;
@@ -126,11 +126,11 @@ namespace aver.services.ArionApi
             }
             if(model.AmountAfterBills > 200000 && model.AmountAfterBills < 400000)
             {
-                model.AllegedFoodCost = 800000;
+                model.AllegedFoodCost = 80000;
             }
-            else
+            if (model.AmountAfterBills > 400000)
             {
-                model.AllegedFoodCost = 800000;
+                model.AllegedFoodCost = 80000;
             }
             return model;
         }
