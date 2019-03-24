@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+    <div class="row wow " style="visibility: visible; animation-name: fadeIn;">
         <!--Card-->
         <div class="col-md-6 mb-4 fadeIn">
             <div class="card blue-gradient">
@@ -118,19 +118,19 @@
                             <div style="color:white;">
                                 Monthly salary
                                 <span class="badge badge-default badge-pill pull-right">
-                                    100.000 kr
+                                    @Model.Finance.TotalAmount kr
                                 </span>
                             </div>
                             <div style="color:white;">
                                 Total monthly budget
                                 <span class="badge badge-default badge-pill pull-right">
-                                    180.000 kr
+                                    @Model.Finance.AmountAfterBills kr
                                 </span>
                             </div>
                             <div style="color:white;">
                                 Suggested food spending budged
                                 <span class="badge badge-default badge-pill pull-right">
-                                    80.000 kr
+                                    @Model.Finance.AllegedFoodCost kr
                                     <i class="ml-1"></i>
                                 </span>
                             </div>
