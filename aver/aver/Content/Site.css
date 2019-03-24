@@ -4,6 +4,10 @@
 
 /*background: url(http://worldartsme.com/images/good-breakfast-clipart-1.jpg) no-repeat*/
 
+body {
+    background: rgba(254,254,254,1);
+}
+
 .img-danger {
     background: url(https://upstater.com/wp-content/uploads/2015/08/no-food-or-drinks-520x520.png) no-repeat;
 }
@@ -24,6 +28,21 @@
     height: 400px;
 }
 
+.banner-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner-links {
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.banner-left {
+    display: flex;
+}
+
 .card-image-main {
     background-size: 100%;
     height: 138px;
@@ -41,6 +60,21 @@
     color:white;
 }
 
+.fadeIn {
+    transition: 1s ease;
+}
+.fadeIn:active {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+.fadeIn:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 1s ease;
+    }
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -89,3 +123,7 @@ textarea {
         font-size: 18px;
         text-align: left !important;
     }
+.navbar a {
+    color: #2fa7bf;
+    font-weight: 500;
+}
