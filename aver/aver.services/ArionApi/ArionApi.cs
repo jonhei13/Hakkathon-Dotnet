@@ -21,7 +21,7 @@ namespace aver.services.ArionApi
 
         public ArionApi()
         {
-            HttpClient client = new HttpClient();
+            client = new HttpClient();
             var url = "https://arionapi-sandbox.azure-api.net";
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "f979fb57057f4e048c95c0592ebee746");
