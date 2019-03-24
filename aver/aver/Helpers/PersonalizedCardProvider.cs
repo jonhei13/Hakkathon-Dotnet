@@ -34,7 +34,7 @@ namespace aver.Helpers
         public SuggestionItem GetByType(string type)
         {
             var payload = (type=="breakfast")?GetFullBreakfast():
-                (type=="supper")?GetFullSupper():(type=="dinner")?GetFullDinner():GetFullDinner();
+                (type=="supper")?GetFullSupper():(type=="dinner")?GetFullDinner():(type=="snacks")?GetFullSnack():GetFullDinner();
             return payload;
         }
         public List<SuggestionItem> GetMealPlan(string budget ="low")
@@ -184,6 +184,81 @@ namespace aver.Helpers
         }
 
         public SuggestionItem GetFullBreakfast()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Breakfast";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kjúklingur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lasagna",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Núðlur",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pasta",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Lobster Rolls",
+                Explanation = GetReason()
+            });
+
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Kavíar",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "White Truffles",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oyster",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Mozzarella sticks",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna Casserol",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MATCHA GREEN TEA",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "MOOSE MILK CHEESE",
+                Explanation = GetReason()
+            });
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
+
+        public SuggestionItem GetFullSnack()
         {
             SuggestionItem item = new SuggestionItem();
             item.Title = "Breakfast";
