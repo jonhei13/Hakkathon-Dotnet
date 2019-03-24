@@ -148,6 +148,8 @@
     <Content Include="Content\imgs\Aver_logo_mobile.png" />
     <Content Include="Content\imgs\linkedin_banner_image_1.png" />
     <Content Include="Content\imgs\logo.png" />
+    <Content Include="Content\images\covered-food-plate-svgrepo-com.svg" />
+    <Content Include="Content\images\lunch-svgrepo-com.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +189,7 @@
     <Content Include="Views\Booking\BookingFor.cshtml" />
     <Content Include="Views\Settings\Index.cshtml" />
     <Content Include="Views\Home\_PartialFoodbox.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

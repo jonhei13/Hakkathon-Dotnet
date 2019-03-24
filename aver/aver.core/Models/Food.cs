@@ -10,7 +10,9 @@ namespace aver.core.Models
         
         public string FoodName { get; set; }
         public string Explanation { get; set; }
-        
+
+        public string Description { get; set; }
+
 
     }
 }
