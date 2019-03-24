@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Detail";
 }
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 detail-container">
     <div class="row wow" style="visibility: visible; animation-name: fadeIn;">
         <div class="col-md-12 mb-4">
             <div class="card">
@@ -23,7 +23,7 @@
         {
 
             var identifier = foods.FoodName.ToString().Trim();
-            <li class="list-group-item" data-toggle="collapse" data-target="#@identifier" style="    margin-bottom: 30px;">
+            <li class="list-group-item detail-li" data-toggle="collapse" data-target="#@identifier" style="    margin-bottom: 30px;">
                 <p style="font-weight:500;">@foods.FoodName</p>
                 <p style="color:lightgray">Because of @foods.Explanation</p>
                 <div id="@identifier" class="collapse in">@foods.Description</div>

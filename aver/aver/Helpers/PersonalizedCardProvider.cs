@@ -15,7 +15,7 @@ namespace aver.Helpers
 
 
 
-        List<string> reasons = new List<string> { "High Blood Pressure", "Lactose Intolerant", "Pregnancy","Varfarin"};
+        List<string> reasons = new List<string> { "High Blood Pressure", "Lactose Intolerance", "Pregnancy","Warfarin"};
         public SuggestionViewModel GetPlan(string ssn)
         {
             //List<string> ids = helper.GetDiagnosisIds(ssn);

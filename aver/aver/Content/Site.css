@@ -3,7 +3,9 @@
 }
 
 /*background: url(http://worldartsme.com/images/good-breakfast-clipart-1.jpg) no-repeat*/
-
+main {
+    margin-top: 40px;
+}
 body {
     background: rgba(254,254,254,1);
 }
@@ -39,6 +41,14 @@ body {
     display: flex;
     align-items: center;
     margin-top: 31px;
+}
+
+.detail-container {
+    margin-top: 130px !important;
+}
+
+.detail-li {
+    cursor: pointer;
 }
 
 .banner-left {
@@ -129,6 +139,7 @@ body {
 .dl-horizontal dt {
     white-space: normal;
 }
+
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
