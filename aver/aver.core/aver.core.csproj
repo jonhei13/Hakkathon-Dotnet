@@ -78,6 +78,7 @@
     <Compile Include="Models\Icd10Model.cs" />
     <Compile Include="Models\NotificationViewModel.cs" />
     <Compile Include="Models\OrigoTreatmentModel.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Models\StatisticsItem.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\SuggestionItem.cs" />
