@@ -15,7 +15,9 @@ body {
 .img-breakfast {
     background: url(https://static.thenounproject.com/png/17920-200.png) no-repeat;
 }
-
+.img-snacks {
+    background-image: url('images/salad.svg');
+}
 .img-supper {
     background: url('images/lunch-svgrepo-com.svg') no-repeat;
 }
