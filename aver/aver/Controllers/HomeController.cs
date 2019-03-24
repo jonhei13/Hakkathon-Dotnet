@@ -14,6 +14,8 @@ using System.Web;
 using System.Web.Mvc;
 using aver.core.Models;
 using aver.core.Model.Arion.FinancialData;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace aver.Controllers
 {
@@ -22,6 +24,7 @@ namespace aver.Controllers
 
         public BusinessHelper helper = new BusinessHelper();
         public ArionApi arionHelper = new ArionApi();
+        public Icd10Helper icdHelper = new Icd10Helper();
 
         public ActionResult Index()
         {
@@ -32,12 +35,18 @@ namespace aver.Controllers
             model.FoodCards = provider.GetMealPlan("low");
 
 
-            helper.GetDiagnosisIds("0206929999");
-
+           
+            List<Icd10Model> classifications = new List<Icd10Model>();
+            helper.GetDiagnosisIds("0206929999").ForEach((code) =>
+            {
+                classifications.Add(icdHelper.GetIcd10Classification(code));
+            });
 
 
             return View(model);
         }
+
+       
         public ActionResult Detail(string type)
         {
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
