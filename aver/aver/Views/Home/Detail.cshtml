@@ -3,11 +3,28 @@
 @{
     ViewBag.Title = "Detail";
 }
+<div class="container-fluid mt-5">
+    <div class="row wow" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="info-txt">
+                        <h2 class="header-txt">@Model.Title</h2>
+                        <p>Based on your medical and financial data we highly recommend you to follow these examples.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h2>Detail</h2>
-
-@foreach (var foods in Model.Foods)
-{
-    <p>@foods.FoodName</p>
-}
+<ul class="list-group">
+    @foreach (var foods in Model.Foods)
+    {
+        <li class="list-group-item">
+            @foods.FoodName
+            <p style="color:lightgray">Because of @foods.Explanation</p>
+        </li>
+    }
+</ul>
 
