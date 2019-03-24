@@ -28,6 +28,21 @@
     height: 400px;
 }
 
+.banner-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner-links {
+    display: flex;
+    align-items: center;
+    margin-top: 31px;
+}
+
+.banner-left {
+    display: flex;
+}
+
 .card-image-main {
     background-size: 100%;
     height: 138px;
