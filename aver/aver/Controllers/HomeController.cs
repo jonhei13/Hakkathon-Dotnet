@@ -36,7 +36,10 @@ namespace aver.Controllers
         {
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
             SuggestionItem model = provider.GetByType(type);
-
+            model.Foods.ForEach((food) =>
+            {
+                food.Description = "Bacon ipsum dolor amet venison ground round jerky prosciutto short ribs. Chuck short ribs ground round porchetta, landjaeger turkey pastrami sirloin jerky. Brisket boudin short ribs swine leberkas beef ribs alcatra ham capicola pork loin turducken rump. ";
+            });
             return View(model);
         }
 
