@@ -135,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Icd10Helper.cs" />
     <Compile Include="Models\UserItem.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Helpers\PersonalizedCardProvider.cs" />
@@ -148,6 +149,9 @@
     <Content Include="Content\images\kisspng-light-wave-color-topography-5b47b9a3e7dc11.7071037315314272359497.png" />
     <Content Include="Content\imgs\Aver_logo_mobile.png" />
     <Content Include="Content\imgs\linkedin_banner_image_1.png" />
+    <Content Include="Content\imgs\logo-new-2.png" />
+    <Content Include="Content\imgs\logo-new.png" />
+    <Content Include="Content\imgs\logo-png.png" />
     <Content Include="Content\imgs\logo.png" />
     <Content Include="Content\images\covered-food-plate-svgrepo-com.svg" />
     <Content Include="Content\images\lunch-svgrepo-com.svg" />

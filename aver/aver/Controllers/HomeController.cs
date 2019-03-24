@@ -14,6 +14,8 @@ using System.Web;
 using System.Web.Mvc;
 using aver.core.Models;
 using aver.core.Model.Arion.FinancialData;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace aver.Controllers
 {
@@ -22,6 +24,7 @@ namespace aver.Controllers
 
         public BusinessHelper helper = new BusinessHelper();
         public ArionApi arionHelper = new ArionApi();
+        public Icd10Helper icdHelper = new Icd10Helper();
 
         public ActionResult Index()
         {
@@ -30,8 +33,16 @@ namespace aver.Controllers
             SuperModel model = new SuperModel();
             model.Finance = finmod;
             model.FoodCards = provider.GetMealPlan("low");
+
+
+           
+            
+
+
             return View(model);
         }
+
+       
         public ActionResult Detail(string type)
         {
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
