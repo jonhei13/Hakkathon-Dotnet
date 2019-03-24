@@ -30,6 +30,12 @@ namespace aver.Controllers
             SuperModel model = new SuperModel();
             model.Finance = finmod;
             model.FoodCards = provider.GetMealPlan("low");
+
+
+            helper.GetDiagnosisIds("0206929999");
+
+
+
             return View(model);
         }
         public ActionResult Detail(string type)
