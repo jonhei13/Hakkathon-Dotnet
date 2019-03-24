@@ -1,0 +1,13 @@
+﻿@model aver.Models.SuggestionItem
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+@foreach (var foods in Model.Foods)
+{
+    <p>@foods.FoodName</p>
+}
+

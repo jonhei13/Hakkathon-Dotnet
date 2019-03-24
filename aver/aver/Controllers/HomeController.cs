@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using aver.core.Models;
 
 namespace aver.Controllers
 {
@@ -24,9 +25,18 @@ namespace aver.Controllers
         {
 
             PersonalizedCardProvider provider = new PersonalizedCardProvider();
-            provider.GetMealPlan("low");
+          
+            SuperModel model = new SuperModel();
 
-            return View();
+            model.FoodCards = provider.GetMealPlan("low");
+            return View(model);
+        }
+        public ActionResult Detail(string type)
+        {
+            PersonalizedCardProvider provider = new PersonalizedCardProvider();
+            SuggestionItem model = provider.GetByType(type);
+
+            return View(model);
         }
 
 
