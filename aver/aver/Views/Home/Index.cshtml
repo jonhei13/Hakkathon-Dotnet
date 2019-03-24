@@ -7,7 +7,6 @@
 
 <main class="pt-5 mx-lg-5">
     <div class="container-fluid mt-5">
-       
         <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
             <div class="col-md-6 mb-4">
@@ -49,10 +48,10 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <div class="card">
+                <div class="card" style="hheight: 284px;">
                     <div class="card-header">Financial status</div>
                     <!--Card content-->
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <!-- List group links -->
                         <div class="list-group list-group-flush">
                             <a class="list-group-item list-group-item-action waves-effect">
@@ -80,203 +79,85 @@
             </div>
 
         </div>
-       
 
-
-
-        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-            <!--Grid column-->
-            <div class="col-md-6 mb-4">
-
-
+    </div>
+    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4">
+            <!--Card-->
+            <a href="@Url.Action("Detail", "", new { type="breakfast" })">
                 <!--Card-->
-                <div class="card">
-                    <div class="card-header bg-danger">You can NOT eat</div>
+                <div class="card aqua-gradient">
+                    <div class="card-img-top card-image-main img-breakfast">
 
-                    <div class="card-img-top card-image-main img-danger">
                     </div>
+
                     <!--Card content-->
                     <div class="card-body">
-
-                        <!-- Table  -->
-                        <table class="table table-hover">
-                            <!-- Table head -->
-                            <thead class="blue-grey lighten-4">
-                                <tr>
-                                    <th>Nafn</th>
-                                    <th>Útaf</th>
-                                </tr>
-                            </thead>
-                            <!-- Table head -->
-                            <!-- Table body -->
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Blóðþrísting</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Blóðþrísting</td>
-                                </tr>
-                            </tbody>
-                            <!-- Table body -->
-                        </table>
-                        <!-- Table  -->
-
+                        <div class="card-txt">Ráðlagður morgunmatur</div>
                     </div>
 
                 </div>
                 <!--/.Card-->
-
-            </div>
-            <!--Grid column-->
-
-            <div class="col-md-6 mb-4">
-                <!--Card-->
-                <div class="card">
-
-
-                    <div class="card-header">Suggested breakfast</div>
-
-                        <div class="card-img-top card-image-main img-breakfast" >
-
-                <a href="@Url.Action("Detail", "", new { type="breakfast" })">
-                    <!--Card-->
-                    <div class="card aqua-gradient">
-                        <div class="card-img-top card-image-main img-breakfast">
-
-                        </div>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <div class="card-txt">Ráðlagður morgunmatur</div>
-                        </div>
-
-                    </div>
-                    <!--/.Card-->
-                </a>
-            </div>
-                <!--Grid column-->
+            </a>
         </div>
+        <!--Grid column-->
+    </div>
 
 
-        <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-            <div class="col-md-6 mb-4">
-                <!--Card-->
+    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4">
+            <div class="card ripe-malinka-gradient">
+                <a href="@Url.Action("Detail", "", new { type="supper" })">
+                    <div class="card-txt">Ráðlagður hádegismatur</div>
 
-                <div class="card">
-
-                    <div class="card-header">Suggested supper</div>
 
                     <div class="card-img-top card-image-main img-supper">
                     </div>
 
                     <!--Card content-->
                     <div class="card-body">
-
-                        <!-- Table  -->
-                        <table class="table table-hover">
-                            <!-- Table head -->
-                            <thead class="blue-grey lighten-4">
-                                <tr>
-                                    <th>
-                                        Nafn
-                                    </th>
-                                    <th>
-                                        Útaf
-                                    </th>
-                                </tr>
-                            </thead>
-                            <!-- Table head -->
-                            <!-- Table body -->
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                </tr>
-                            </tbody>
-                            <!-- Table body -->
-                        </table>
-                        <!-- Table  -->
-
                     </div>
-
-                </div>
-                <!--/.Card-->
-
+                </a>
             </div>
+            <!--/.Card-->
+        </div>
+    </div>
 
+    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+        <div class="col-md-6 mb-4">
+            <!--Card-->
+            <div class="card winter-neva-gradient">
+                <a href="@Url.Action("Detail", "", new { type="dinner" })">
 
-            <div class="col-md-6 mb-4">
-                <!--Card-->
-                <div class="card">
-
-
-                    <div class="card-header">Suggested dinner</div>
+                    <div class="card-txt">Ráðlagður kvöldmatur</div>
 
                     <div class="card-img-top card-image-main img-dinner">
                     </div>
+                    <div class="card-body">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 
+        <div class="col-md-6 mb-4">
+
+            <!--Card-->
+            <div class="card blue-gradient">
+                <a href="@Url.Action("Detail", "", new { type="not-allowed" })">
+                    <div class="card-txt">Þú mátt EKKI borða</div>
+
+                    <div class="card-img-top card-image-main img-danger">
+                    </div>
                     <!--Card content-->
                     <div class="card-body">
 
-                <div class="card ripe-malinka-gradient">
-                    <a href="@Url.Action("Detail", "", new { type="supper" })">
-                        <div class="card-txt">Ráðlagður hádegismatur</div>
-
-
-                        <div class="card-img-top card-image-main img-supper">
-                        </div>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                        </div>
-                    </a>
-                </div>
-                <!--/.Card-->
-
+                    </div>
+                </a>
             </div>
+            <!--/.Card-->
+
         </div>
-
-            <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-                <div class="col-md-6 mb-4">
-                    <!--Card-->
-                    <div class="card winter-neva-gradient">
-                        <a href="@Url.Action("Detail", "", new { type="dinner" })">
-
-                            <div class="card-txt">Ráðlagður kvöldmatur</div>
-
-                            <div class="card-img-top card-image-main img-dinner">
-                            </div>
-                            <div class="card-body">
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-
-                <div class="col-md-6 mb-4">
-
-                    <!--Card-->
-                    <div class="card blue-gradient">
-                        <a href="@Url.Action("Detail", "", new { type="not-allowed" })">
-                            <div class="card-txt">Þú mátt EKKI borða</div>
-
-                            <div class="card-img-top card-image-main img-danger">
-                            </div>
-                            <!--Card content-->
-                            <div class="card-body">
-
-                            </div>
-                        </a>
-                    </div>
-                    <!--/.Card-->
-
-                </div>
-                </div>
-            <!--Grid row-->
+    </div>
+    <!--Grid row-->
 </main>
