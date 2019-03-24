@@ -33,8 +33,9 @@ namespace aver.Helpers
         }
         public SuggestionItem GetByType(string type)
         {
-            var payload = (type=="breakfast")?GetFullBreakfast():
-                (type=="supper")?GetFullSupper():(type=="dinner")?GetFullDinner():GetFullDinner();
+            var payload = (type == "breakfast") ? GetFullBreakfast() :
+                (type == "supper") ? GetFullSupper() : (type == "dinner") ? GetFullDinner() : (type == "snacks") ? GetFullSnacks():
+                (type == "not-allowed") ? GetBannedList() : GetBannedList();
             return payload;
         }
         public List<SuggestionItem> GetMealPlan(string budget ="low")
@@ -65,19 +66,33 @@ namespace aver.Helpers
 
             banned.Add(new Food()
             {
-                FoodName = "Epli",
+                FoodName = "Pasta",
                 Explanation = GetReason()
             });
             banned.Add(new Food()
             {
-                FoodName = "Banani",
+                FoodName = "White Bread",
                 Explanation = GetReason()
             });
             banned.Add(new Food()
             {
-                FoodName = "Hafragrautur",
+                FoodName = "French Fries",
                 Explanation = GetReason()
             });
+            banned.Add(new Food()
+            {
+                FoodName = "Candy",
+                Explanation = GetReason()
+            }); banned.Add(new Food()
+            {
+                FoodName = "Ice Cream",
+                Explanation = GetReason()
+            }); banned.Add(new Food()
+            {
+                FoodName = "Chips",
+                Explanation = GetReason()
+            });
+
             item.Foods = banned;
             return item;
         }
@@ -191,65 +206,65 @@ namespace aver.Helpers
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Kjúklingur",
+                FoodName = "Oats",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lasagna",
+                FoodName = "AB - Milk",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Núðlur",
+                FoodName = "Skyr.is",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Pasta",
+                FoodName = "Eggs",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lobster Rolls",
-                Explanation = GetReason()
-            });
-
-
-            lowBudget.Add(new Food()
-            {
-                FoodName = "Kavíar",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "White Truffles",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "Oyster",
+                FoodName = "Sesame Seeds",
                 Explanation = GetReason()
             });
 
+
             lowBudget.Add(new Food()
             {
-                FoodName = "Mozzarella sticks",
+                FoodName = "Strawberries",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Tuna Casserol",
+                FoodName = "Apples",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "MATCHA GREEN TEA",
+                FoodName = "Crispbread",
+                Explanation = GetReason()
+            });
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Tuna",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "MOOSE MILK CHEESE",
+                FoodName = "Cod",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Milk",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Cheese",
                 Explanation = GetReason()
             });
             item.Foods = lowBudget;
@@ -265,65 +280,53 @@ namespace aver.Helpers
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Kjúklingur",
+                FoodName = "Eggs",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lasagna",
+                FoodName = "Chicken",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Núðlur",
+                FoodName = "Cod",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Pasta",
+                FoodName = "Tuna",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lobster Rolls",
-                Explanation = GetReason()
-            });
-
-
-            lowBudget.Add(new Food()
-            {
-                FoodName = "Kavíar",
+                FoodName = "Apples",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "White Truffles",
+                FoodName = "Oranges",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Oyster",
+                FoodName = "Mushrooms",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Ab-milk",
                 Explanation = GetReason()
             });
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Mozzarella sticks",
+                FoodName = "Brown Pasta",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Tuna Casserol",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "MATCHA GREEN TEA",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "MOOSE MILK CHEESE",
+                FoodName = "Cheese",
                 Explanation = GetReason()
             });
             item.Foods = lowBudget;
@@ -338,65 +341,55 @@ namespace aver.Helpers
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Kjúklingur",
+                FoodName = "Chicken",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lasagna",
+                FoodName = "Beef",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Núðlur",
+                FoodName = "Sweet Potato",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Pasta",
+                FoodName = "Mushroom",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Lobster Rolls",
+                FoodName = "Onion",
                 Explanation = GetReason()
             });
            
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Kavíar",
+                FoodName = "Cod",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "White Truffles",
+                FoodName = "Tuna",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Oyster",
+                FoodName = "Salad",
                 Explanation = GetReason()
             });
 
             lowBudget.Add(new Food()
             {
-                FoodName = "Mozzarella sticks",
+                FoodName = "Whole wheat pasta",
                 Explanation = GetReason()
             });
             lowBudget.Add(new Food()
             {
-                FoodName = "Tuna Casserol",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "MATCHA GREEN TEA",
-                Explanation = GetReason()
-            });
-            lowBudget.Add(new Food()
-            {
-                FoodName = "MOOSE MILK CHEESE",
+                FoodName = "Brown Rice",
                 Explanation = GetReason()
             });
             item.Foods = lowBudget;
@@ -404,6 +397,44 @@ namespace aver.Helpers
             return item;
 
         }
+        public SuggestionItem GetFullSnacks()
+        {
+            SuggestionItem item = new SuggestionItem();
+            item.Title = "Snacks";
+            List<Food> lowBudget = new List<Food>();
+
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Apples",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Oranges",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Pears",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Salad",
+                Explanation = GetReason()
+            });
+            lowBudget.Add(new Food()
+            {
+                FoodName = "Carrots",
+                Explanation = GetReason()
+            });
+
+            item.Foods = lowBudget;
+
+            return item;
+
+        }
+
 
         public SuggestionItem GetSupper(string budget, string affliction)
         {
